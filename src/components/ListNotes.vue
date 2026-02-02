@@ -12,13 +12,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="mt-5 bg-slate-500 p-4 rounded h-full">
+  <div class="mt-5 bg-slate-500 p-4 rounded h-full shadow-lg">
     <div class="mb-4">
       <h2 class="text-2xl font-bold text-center">List Notes</h2>
     </div>
-    <ul class="flex flex-col gap-4 max-h-96 overflow-y-scroll">
+    <ul class="flex flex-col gap-4 max-h-96 overflow-y-scroll p-4">
       <li
-        class="flex flex-col bg-slate-400 p-4 py-8 rounded-lg space-y-2"
+        class="flex flex-col bg-slate-400 p-4 py-8 rounded-lg space-y-2 hover:shadow-lg hover:scale-105 transition-transform duration-200"
         v-for="n in notes"
         :key="n.id"
       >
@@ -35,7 +35,7 @@ defineProps<{
         </div>
         <strong>
           <button
-            class="text-xl font-bold underline"
+            class="text-xl font-bold underline hover:cursor-pointer hover:text-slate-950 transition-colors duration-200"
             @click="toggleViewModal(n)"
           >
             {{ n.title.charAt(0).toUpperCase() + n.title.slice(1) }}
